@@ -1,0 +1,6 @@
+beautifulsoup4==4.11.1
+pandas==1.5.2
+pymongo==4.3.3
+python-dotenv==0.21.0
+pytrends==4.8.0
+requests==2.25.1

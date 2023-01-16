@@ -1,0 +1,48 @@
+version: "0.5"
+
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: strong_password
+    ports:
+      - "27017:27017"
+    
+  storical:
+    build: .
+    restart: on-failure
+    depends_on:
+      mongo:
+        condition: service_started
+    environment:
+      - TYPE=STORICAL
+      - MONGO_CONNECT_STRING=mongodb://admin:strong_password@mongo:27017/?authMechanism=DEFAULT
+      - DB_NAME=DB-TEST
+      - NEWS_COLLECTION=news
+      - INFLUENCERS_COLLECTION=influencers
+      - LOG_COLLETION=log
+      - INSTAGRAM_COLLECTION=instagram
+      - TREND_COLLECTION=trend
+      - INSTAGRAM_COOKIES=********
+
+  service:
+    build: .
+    restart: always
+    depends_on:
+      storical:
+        condition: service_completed_successfully
+      mongo:
+        condition: service_started
+    environment:
+      - TYPE=SERVICE
+      - MONGO_CONNECT_STRING=mongodb://admin:strong_password@mongo:27017/?authMechanism=DEFAULT
+      - DB_NAME=DB-TEST
+      - NEWS_COLLECTION=news
+      - INFLUENCERS_COLLECTION=influencers
+      - LOG_COLLETION=log
+      - INSTAGRAM_COLLECTION=instagram
+      - TREND_COLLECTION=trend
+      - INSTAGRAM_COOKIES=********
