@@ -174,42 +174,6 @@ Considering that we obtained several JSON files from the Data Acquisition step, 
 
 We created a database called 'DB-TEST', containing a collection for each data source, and each time new data was collected, a write operation was performed to store it.
 
-Here are some examples of queries on a single data sources:
-
-- *news* collection: find the latest article regarding Valentino Rossi.
-```python
-mydb = client["DB-TEST"]
-mycol = mydb["news"]
-lastDay = datetime(2022, 12, 31)
-lastArticle = mycol.find({"username": "valeyellow46",       
-                          "timestamp":{"$lt": lastDay}}).limit(1)
-```
-
-```javascript
-{
- '_id': ObjectId('63c4147b51c0d54814d54150'),
- 'acquisition_datetime': datetime.datetime(2023, 1, 15, 14, 57, 48, 385000),
- 'username': 'valeyellow46',
- 'timestamp': datetime.datetime(2022, 12, 22, 14, 27),
- 'title': 'Valentino Rossi in pista con Bmw M Motorsport',
- 'inTitle': True
-}
-```
-- *instagram* collection: find the total number of followers that Chiara Ferragni had on the last day of the year.
-
-```python
-lastDay = datetime(2022, 12, 31)
-mycol = mydb["instagram"]
-a = mycol.find({"username":"chiaraferragni", "timestamp":{"$eq":lastDay}},
-               {"followers":1, "_id":0})
-```
-
-```javascript
-{
-    'followers': 28333515
-}
-```
-
 At this point, we had a database containing various collections, each for every data source we considered, and the Data Integration phase could begin. 
  
 ## 6. Data Integration and Enrichment
