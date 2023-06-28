@@ -4,6 +4,7 @@ Collection of all projects developed during the MSc in Data Science at the Unive
 ## EMOTIC
 - Context Based Emotion Recognition using Transfer Learning in Tensorflow
 - Given an input image, the network identifies the relative bounding box and predicts the three continuous dimensions of emotions: Valence, Arousal and Dominance
+- Project for the exam of "Foundations of Deep Learning"
 - [Here](EMOTIC/) you can find the code and the report
 
 ## Influencers News
