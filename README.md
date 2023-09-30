@@ -21,7 +21,7 @@ Collection of all projects developed during the MSc in Data Science at the Unive
 - Project for the exam of "Foundations of Probability and Statistics"
 - [Here](SpotifyTop200/) you can find the report
 
-## Understanding the semantics ofphishing e-mails
+## Understanding the semantics of phishing e-mails
 - Approach to detect and quantify the semantic differences between common and phishing e-mails through a cross-corpora analyses based on Large Language Models
 - Project for the exam of "Data Semantics"
 - [Here](PhishingSemantic/) you can find the code and the presentation
