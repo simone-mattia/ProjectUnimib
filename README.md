@@ -6,6 +6,11 @@ Collection of all projects developed during the MSc in Data Science at the Unive
 - Project for the exam of "Fondation of Deep Learning"
 - [Here](EMOTIC/) you can find the code and the report
 
+## GENIUS
+- Project for the exam of "Text Mining and Search"
+- Pedictive model capable of determining genre, identifying relevant topics and suggesting similar songs based solely on the textual content of a given song
+- [Here](GENIUS/) you can find the code anche the report 
+
 ## Influencers News
 - Data acquisition and integration system to quantify the influence of news agencies on the growth of Instagram followers of the top 100 Italian influencers using docker compose, python, mongodb and tableau visualization
 - Project for the exam of "Data Management and Visualization"
